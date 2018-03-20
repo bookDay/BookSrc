@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.book.web.mapper.tb_bookcaseMapper">
+    <resultMap type="com.book.web.model.tb_bookcase" id="bookcase">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="Column_3" property="Column_3"/>
+    </resultMap>
+    <select id="getList" resultMap="bookcase">
+        select * from tb_bookcase
+    </select>
+    <select id="getCount" resultType="int">
+        select COUNT(*) from tb_bookcase
+    </select>
+</mapper>

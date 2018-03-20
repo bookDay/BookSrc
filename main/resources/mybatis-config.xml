@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="application.properties"></properties>
+    <typeAliases>
+        <package name="com.book.web.model.tb_bookcase"/>
+    </typeAliases>
+    <!-- 数据库连接配置，配置连接字符串、用户名、密码或缓存、懒加载、语句执行超时时间等这里目前只配置了基本的数据库连接属性 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.book.web.mapper"/>
+    </mappers>
+</configuration>
